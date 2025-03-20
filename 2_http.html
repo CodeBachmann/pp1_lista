@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>O que é o protocolo HTTP</title>
+</head>
+<body>
+    
+<!-- ✅ Atividade 2 – Explique o que é o protocolo HTTP
+Arquivo: 2_http.html
+Explique o que é o protocolo HTTP e como é usado na WEB ilustrando(com imagens) e explicações exemplos de requisições. 
+Descreva detalhes dos campos de um request que você capturar e response. -->
+
+</body>
+<h1>O que é HTTP?</h1>
+<p>HTTP ou  Hypertext Transfer Protocol é uma forma para que seja feita a troca de informações entre servidor e usuário, isso é feito por meio de requests e responses, que transferem imagens, arquivos, e páginas WEB. No geral as páginas da "Internet" como conhecemos geralmente usam esse sistema. </p>
+<h1>Como o HTTP Funciona</h1>
+    <p>O HTTP (Hypertext Transfer Protocol) é um protocolo usado para transferir dados na web. Ele permite que clientes (como navegadores) se comuniquem com servidores para buscar ou enviar informações.</p>
+
+    <h2>Fluxo Básico</h2>
+    <ol>
+        <li><strong>Cliente faz uma requisição:</strong> O navegador envia uma requisição HTTP para o servidor.</li>
+        <li><strong>Servidor processa a requisição:</strong> O servidor recebe e interpreta a requisição.</li>
+        <li><strong>Servidor envia uma resposta:</strong> O servidor envia uma resposta HTTP de volta ao cliente.</li>
+        <li><strong>Cliente exibe a resposta:</strong> O navegador interpreta a resposta e exibe o conteúdo.</li>
+    </ol>
+
+    <h2>Exemplo de Requisição e Resposta</h2>
+    <div class="example">
+        <h3>Requisição HTTP (Cliente → Servidor)</h3>
+        <pre><code>GET / HTTP/1.1
+Host: www.google.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</code></pre>
+    </div>
+
+    <div class="example">
+        <h3>Resposta HTTP (Servidor → Cliente)</h3>
+        <pre><code>HTTP/1.1 200 OK
+Date: Wed, 20 Mar 2025 12:00:00 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 3489
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Google&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao Google!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+    <h2>Componentes de uma Requisição HTTP</h2>
+    <ul>
+        <li><strong>Método HTTP:</strong> Define a ação a ser realizada.
+            <ul>
+                <li><code>GET</code>: Solicita um recurso (ex: uma página).</li>
+                <li><code>POST</code>: Envia dados ao servidor (ex: um formulário).</li>
+                <li><code>PUT</code>: Atualiza um recurso.</li>
+                <li><code>DELETE</code>: Remove um recurso.</li>
+            </ul>
+        </li>
+        <li><strong>URL:</strong> Endereço do recurso (ex: <code>https://www.exemplo.com</code>).</li>
+        <li><strong>Headers:</strong> Informações adicionais (ex: tipo de conteúdo aceito, navegador usado).</li>
+        <li><strong>Body (opcional):</strong> Dados enviados ao servidor (usado em <code>POST</code> ou <code>PUT</code>).</li>
+    </ul>
+
+    <h2>Componentes de uma Resposta HTTP</h2>
+    <ul>
+        <li><strong>Status Code:</strong> Código que indica o resultado da requisição.
+            <ul>
+                <li><code>200 OK</code>: Sucesso.</li>
+                <li><code>404 Not Found</code>: Recurso não encontrado.</li>
+                <li><code>500 Internal Server Error</code>: Erro no servidor.</li>
+            </ul>
+        </li>
+        <li><strong>Headers:</strong> Metadados sobre a resposta (ex: tipo de conteúdo, tamanho).</li>
+        <li><strong>Body:</strong> Conteúdo da resposta (ex: HTML, JSON).</li>
+    </ul>
+
+    <h2>Exemplo Prático com JavaScript</h2>
+    <div class="example">
+        <p>Você pode fazer uma requisição HTTP usando <code>fetch()</code>:</p>
+        <pre><code>fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => response.json())
+  .then(data => console.log(data));</code></pre>
+        <p>Isso retorna um JSON como:</p>
+        <pre><code>{
+  "userId": 1,
+  "id": 1,
+  "title": "Título do post",
+  "body": "Conteúdo do post."
+}</code></pre>
+    </div>
+
+    <h2>Ferramentas para Testar Requisições HTTP</h2>
+    <ul>
+        <li><strong>DevTools do navegador:</strong> Aperte <code>F12</code> e vá na aba "Network" para ver as requisições.</li>
+        <li><strong>Postman <img src="https://static-00.iconduck.com/assets.00/postman-icon-996x1024-wwyqeryb.png" width="30px" height="30px"> </strong> Para testar APIs e enviar requisições manualmente.</li>
+        <li><strong>Wireshark <img src="https://icons.veryicon.com/png/System/Captiva/wireshark.png" width="30px" height="30px">:</strong> Para monitorar o tráfego de rede. </li>
+        
+    </ul>
+
+    <footer>
+        <p>Resumindo: o HTTP é a "conversa" entre o cliente (navegador) e o servidor, onde o cliente pede algo e o servidor responde com os dados. 😊</p>
+        <h3>REFERÊNCIAS</h3>
+        <p></p><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Guides/Overview"> Mozilla Docs </a>
+        <p></p><a href="https://www.w3schools.com/tags/ref_httpmethods.asp"> WC3 HTTP Request Examples </a>
+        <p></p><a href="https://datatracker.ietf.org/doc/html/rfc2616">Documento que define o protocolo HTTP/1.1 *RFC 2616*</a>
+    </footer>
+</html>
