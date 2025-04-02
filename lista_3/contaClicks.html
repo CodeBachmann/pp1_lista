@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{padding: 0px; margin: 0px;}
+        body{
+            height: 100svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body>*{
+            width: 30vh;
+        }
+    </style>
+</head>
+<body>
+    <button id="meuButao">Click em mim</button>
+</body>
+</html>
+<script>
+    var i=1;
+    document.addEventListener("click", incrementa_valor_do_butao)
+    function incrementa_valor_do_butao(){
+        let button = document.querySelector("button");
+        button.innerHTML=i;
+        i = i+1;
+    }
+    
+
+</script>
